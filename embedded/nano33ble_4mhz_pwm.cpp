@@ -18,8 +18,8 @@ void setup() {
 
 	ret_code_t result{NRFX_SUCCESS};
 
-	const uint16_t period{2};					 // 2 ticks at base_clock
-	const uint16_t pulse{1 | SEQ_POLARITY_BIT};	 // 50% duty cycle, set SEQ_POLARITY_BIT (highest bit) to flip polarity
+	const uint16_t period{2};			 // 2 ticks at base_clock
+	static uint16_t pulse{1 | SEQ_POLARITY_BIT};	 // 50% duty cycle, set SEQ_POLARITY_BIT (highest bit) to flip polarity
 
 	nrfx_pwm_config_t config = NRFX_PWM_DEFAULT_CONFIG;
 	config.output_pins[0] = pwm_pin;
